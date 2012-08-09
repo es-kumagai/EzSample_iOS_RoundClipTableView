@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EzSampleTableViewController.h"
 
 @interface EzSampleViewController : UIViewController
+
+@property (nonatomic,readwrite,strong) IBOutlet UITableViewController* tableViewController;
 
 @end

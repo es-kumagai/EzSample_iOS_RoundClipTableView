@@ -8,27 +8,18 @@
 
 #import "EzSampleViewController.h"
 
-@interface EzSampleViewController ()
-
-@end
+// layer を使用するために QuartzCore.h をインポートします。
+#import <QuartzCore/QuartzCore.h>
 
 @implementation EzSampleViewController
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-}
-
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-	return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+	
+	// ここで、サブビューとして配置した UITableView の角をクリップしています。
+	self.tableViewController.tableView.layer.cornerRadius = 5.0;
+	self.tableViewController.tableView.clipsToBounds = YES;
 }
 
 @end
